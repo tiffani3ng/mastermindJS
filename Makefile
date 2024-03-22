@@ -3,7 +3,7 @@
 all: PutHTML
 
 PutHTML:
-  cp mastermindJS.html /var/www/html/mastermindJS/
+	cp mastermindJS.html /var/www/html/mastermindJS/
 	cp style.css /var/www/html/mastermindJS/
 	cp script.js /var/www/html/mastermindJS/
 
