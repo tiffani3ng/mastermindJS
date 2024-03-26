@@ -19,13 +19,14 @@ class Code {
 
 class Board {
 
-  constructor(code) {
-    // constructor takes code key as a parameter
+  constructor() {
     // sets all variables to default empty values
     this.currentGuess = []; // array to store user guess
     this.circles = []; // array to store circles choices
     this.currentGuessNum = 1; // guess number
-    this.correctCode = code; // array to store code key
+    this.code = new Code(); // new code object to hold code key
+    this.code.genCode(); // generates a new code
+    this.correctCode = this.code.getCode(); // array to store code key
     this.playerScore = 0; // setting scores to zero
     this.compScore = 0;
   } // end constructor
@@ -43,6 +44,8 @@ class Board {
     // resetting scores
     this.playerScore = 0;
     this.compScore = 0;
+    // choosing a new code
+    this.correctCode.
   } // end resetBoard
 
   guess(number) {
@@ -165,7 +168,7 @@ class MastermindGame {
     // constructor sets variables to default values
     this.code = new Code(); // new code object to hold code key
     this.code.genCode(); // generates a new code
-    this.board = new Board(this.code.getCode()); // creates new board for game
+    this.board = new Board(); // creates new board for game
   } // end constructor
 
   instructions() {
@@ -181,8 +184,6 @@ class MastermindGame {
     // reflect score change on screen
     document.getElementById('scoreP').innerText = 0;
     document.getElementById('scoreC').innerText = 0;
-    // generate new code
-    this.code.genCode();
   } // end resetgame
 }
 
