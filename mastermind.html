@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mastermind</title>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+  <link href="mmStyle.css" rel="stylesheet">
+  <script src="mmScript.js"></script>
+</head>
+
+<body onload="game.resetGame();">
+
+  <div class="container" style="justify-content: center;">
+    <h1 style="margin-bottom: 10px;">Mastermind!</h1>
+    <div class="container" style="display: block; justify-content: center; margin-bottom: 0px;">
+      <button class="menuBTN" onclick="game.instructions();" style="margin: 5px; margin-bottom: 0px;">How to
+        Play</button>
+      <button class="menuBTN" style="background-color: #ff8c82; margin: 5px; margin-bottom: 0px;"
+        onclick="game.resetGame();">Reset Game</button>
+    </div>
+    <div class="scoreBoard">
+      <div class="indivScore" style="border-right: 2px solid black;">
+        <span>
+          <h4 style="margin: 10px 10px 13px 45px; display: inline-block;">Player:</h4>
+        </span>
+        <span>
+          <h4 id="scoreP" style="margin: 0px 45px 0px 0px; display: inline-block;">0</h4>
+        </span>
+      </div>
+      <div class="indivScore" style="border-left: 2px solid black;">
+        <h4 style="margin: 10px 10px 13px 30px; display: inline-block;">Computer:</h4>
+        <h4 id="scoreC" style="margin: 0px 30px 0px 0px; display: inline-block;">0</h4>
+      </div>
+    </div>
+    <div class="colorBoard">
+      <h4 style="margin: 10px 20px 0px;">Color</h4>
+      <h4 style="margin: 5px 20px 25px;">Board</h4>
+      <div class="container">
+        <div class="colorChoice" style="background-color: #FFADAD;" onclick="game.board.selectColor('#FFADAD')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #FFD6A5;" onclick="game.board.selectColor('#FFD6A5')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #FDFFB6;" onclick="game.board.selectColor('#FDFFB6')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #CAFFBF;" onclick="game.board.selectColor('#CAFFBF')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #9BF6FF;" onclick="game.board.selectColor('#9BF6FF')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #A0C4FF;" onclick="game.board.selectColor('#A0C4FF')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #BDB2FF;" onclick="game.board.selectColor('#BDB2FF')"></div>
+        <br />
+        <div class="colorChoice" style="background-color: #FFC6FF; margin-bottom: 20px;"
+          onclick="game.board.selectColor('#FFC6FF')"></div>
+      </div>
+    </div>
+
+    <div class="pegBoard">
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row1">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(1)" id="hint1"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(2)" id="hint2"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(3)" id="hint3"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(4)" id="hint4"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row2">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(5)" id="hint5"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(6)" id="hint6"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(7)" id="hint7"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(8)" id="hint8"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row3">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(9)" id="hint9"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(10)" id="hint10"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(11)" id="hint11"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(12)" id="hint12"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row4">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(13)" id="hint13"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(14)" id="hint14"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(15)" id="hint15"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(16)" id="hint16"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row5">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(17)" id="hint17"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(18)" id="hint18"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(19)" id="hint19"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(20)" id="hint20"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row6">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(21)" id="hint21"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(22)" id="hint22"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(23)" id="hint23"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(24)" id="hint24"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row7">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(25)" id="hint25"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(26)" id="hint26"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(27)" id="hint27"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(28)" id="hint28"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row8">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(29)" id="hint29"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(30)" id="hint30"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(31)" id="hint31"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(32)" id="hint32"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row9">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(33)" id="hint33"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(34)" id="hint34"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(35)" id="hint35"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(36)" id="hint36"></div>
+        </div>
+      </div>
+
+      <div class="pegRow">
+        <div class="container" style="display: inline-block;" id="row10">
+          <div class="circle" onclick="game.board.guess(number, currentColor);(37)" id="hint37"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(38)" id="hint38"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(39)" id="hint39"></div>
+          <div class="circle" onclick="game.board.guess(number, currentColor);(40)" id="hint40"></div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="container" style="text-align: center;">
+      <button class="menuBTN" style="background-color: #96d35f;" onclick="game.board.checkGuess();">Check Guess</button>
+      <button class="menuBTN" onclick="resetBoard()">New Round</button>
+    </div>
+
+</body>
+
+</html>

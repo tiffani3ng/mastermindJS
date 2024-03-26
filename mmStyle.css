@@ -1,0 +1,100 @@
+html {
+  height: 100%;
+  width: 100%;
+}
+
+body {
+  background-color: #f9d3e0;
+  font-family: "Gill Sans", sans-serif;
+}
+
+h1 {
+  text-align: center;
+  margin-top: 15px;
+  margin-bottom: 30px;
+}
+
+h4 {
+  text-align: center;
+  margin-top: 5px;
+}
+
+.colorBoard {
+  display: inline-block;
+  width: fit-content;
+  justify-content: center;
+  margin: 10px 5px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #d7b38e;
+}
+
+.pegBoard {
+  display: inline-block;
+  width: fit-content;
+  justify-content: center;
+  margin: 10px 5px 10px;
+  border: 2px solid black;
+  border-radius: 10px;
+  background-color: #d7b38e;
+}
+
+.pegRow {
+  display: block;
+  width: fit-content;
+  justify-content: center;
+}
+
+.scoreBoard {
+  display: block;
+  width: fit-content;
+  justify-content: center;
+  text-align: center;
+  margin: 25px auto 25px auto;
+  border: 2px solid black;
+  border-radius: 5px;
+  background-color: #f8f8f8;
+}
+
+.indivScore {
+  display: inline-block;
+  margin: 0px;
+}
+
+.circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+  border: 2px solid #000;
+  background-color: #f8f8f8;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.colorChoice {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin: 5px;
+  border: 2px solid #000;
+  display: inline-flex;
+  cursor: pointer;
+}
+
+.container {
+  margin: 0 auto;
+  width: fit-content;
+  justify-content: center;
+}
+
+.menuBTN {
+  display: inline-block;
+  width: fit-content;
+  justify-content: center;
+  text-align: center;
+  margin: 25px auto 25px auto;
+  border: 2px solid black;
+  border-radius: 2px;
+  background-color: #f9eaef;
+}
