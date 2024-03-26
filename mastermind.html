@@ -10,7 +10,7 @@
   <script src="mmScript.js"></script>
 </head>
 
-<body onload="game.resetGame();">
+<body>
 
   <div class="container" style="justify-content: center;">
     <h1 style="margin-bottom: 10px;">Mastermind!</h1>
@@ -152,8 +152,8 @@
     </div>
 
     <div class="container" style="text-align: center;">
-      <button class="menuBTN" style="background-color: #96d35f;" onclick="game.board.checkGuess();">Check Guess</button>
-      <button class="menuBTN" onclick="game.board.resetBoard()">New Round</button>
+      <button class="menuBTN" style="background-color: #96d35f;" onclick="game.checkGuess();">Check Guess</button>
+      <button class="menuBTN" onclick="game.newRound()">New Round</button>
     </div>
 
 </body>
