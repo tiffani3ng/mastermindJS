@@ -3,9 +3,9 @@
 all: PutHTML
 
 PutHTML:
-	cp mastermindJS.html /var/www/html/mastermindJS/
-	cp style.css /var/www/html/mastermindJS/
-	cp script.js /var/www/html/mastermindJS/
+	cp mastermind.html /var/www/html/mastermindJS/
+	cp mmStyle.css /var/www/html/mastermindJS/
+	cp mmScript.js /var/www/html/mastermindJS/
 
 	echo "Current contents of your HTML directory: "
 	ls -l /var/www/html/mastermindJS/
